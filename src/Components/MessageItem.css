@@ -1,0 +1,17 @@
+#Member:last-of-type {
+  border: 1px ridge #00a8ff;
+}
+
+#Member,
+#currentMember {
+  background-color: #f5f6fa;
+}
+
+.text-break {
+  font-size: 18px;
+}
+
+.user {
+  font-size: 20px;
+  font-weight: bold;
+}

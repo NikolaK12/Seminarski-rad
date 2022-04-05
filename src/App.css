@@ -1,0 +1,20 @@
+
+
+.ui {
+  background-color: #f5f6fa;
+}
+
+.input {
+  background-color: #dcdde1;
+  padding: 1.8vh;
+  border-bottom: 1px solid grey;
+}
+
+.messages {
+  height: 85vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+}

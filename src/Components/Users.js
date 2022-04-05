@@ -19,9 +19,8 @@ export default function Users(props) {
             </tr>
           </thead>
 
-          <tbody >
+          <tbody>
             {users.map((user) => (
-
               <tr key={nanoid()}>
                 <td style={{ color: user.clientData.color }}>
                   {user.clientData.username}
@@ -31,7 +30,6 @@ export default function Users(props) {
               </tr>
             ))}
           </tbody>
-
         </Table>
       </Modal.Body>
       <Modal.Footer>

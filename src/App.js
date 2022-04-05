@@ -18,7 +18,9 @@ export default class App extends React.Component {
     messages: [],
     member: {
       username: User(),
-      color: randomColor(),
+      color: randomColor({
+        luminosity: "light",
+      }),
     },
     show: false,
   };

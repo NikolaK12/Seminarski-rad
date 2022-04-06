@@ -1,15 +1,19 @@
 import React from "react";
-import Input from "./Components/Input.js";
-import MessageList from "./Components/MessageList.js";
-import Nav from "./Components/Nav.js";
-import Users from "./Components/Users.js";
+import Input from "./Components/Input.jsx";
+import MessageList from "./Components/MessageList.jsx";
+import Nav from "./Components/Nav.jsx";
+import Users from "./Components/Users.jsx";
 import { Container } from "react-bootstrap";
 import { randomColor } from "randomcolor";
 import "./App.css";
 
 
 function User() {
-  return prompt("Please enter username:");
+
+  var t = prompt("Please enter your username");
+  return t;
+
+
 }
 
 export default class App extends React.Component {

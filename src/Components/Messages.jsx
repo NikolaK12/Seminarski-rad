@@ -2,7 +2,7 @@ import { ListGroup } from "react-bootstrap";
 import { nanoid } from "nanoid";
 import React from "react";
 
-export default function MessageList(props) {
+export default function Messages(props) {
   const { messages } = props;
 
   return (
@@ -12,12 +12,7 @@ export default function MessageList(props) {
           className="mt-2 ms-2 mx-2 rounded-3 shadow-lg p-4"
           key={nanoid()}
         >
-          <p
-            style={{
-              color: message.member.clientData.color,
-              fontWeight: "bold",
-            }}
-          >
+          <p style={{ color: message.member.clientData.color }}>
             {message.member.clientData.username}
           </p>
           <p className="text-break">{message.text}</p>

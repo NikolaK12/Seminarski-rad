@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Users, MessageList, Input } from "./Components";
+import { Nav, Users, Messages, Input } from "./Components";
 import { Container } from "react-bootstrap";
 import { randomColor } from "randomcolor";
 import "./App.css";
@@ -86,7 +86,7 @@ export default class App extends React.Component {
         />
 
         <Container fluid="xxxl" className="messages">
-          <MessageList messages={this.state.messages} />
+          <Messages messages={this.state.messages} />
         </Container>
 
         <Container fluid="xxxl" className="input">

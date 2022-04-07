@@ -12,13 +12,13 @@ export default class App extends React.Component {
   state = {
     users: [],
     messages: [],
+    show: false,
     member: {
       username: User(),
       color: randomColor({
         luminosity: "bright",
       }),
-    },
-    show: false,
+    }
   };
 
   Open = () => {

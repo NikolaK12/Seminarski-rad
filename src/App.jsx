@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Users, Messages, Input } from "./Components";
+import { Navs, Users, Messages, Input } from "./Components";
 import { Container } from "react-bootstrap";
 import { randomColor } from "randomcolor";
 import "./App.css";
@@ -15,9 +15,7 @@ export default class App extends React.Component {
     show: false,
     member: {
       username: User(),
-      color: randomColor({
-        luminosity: "bright",
-      }),
+      color: randomColor(),
     }
   };
 
@@ -76,7 +74,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Container fluid="xxxl" className="ui">
-        <Nav value={this.state.users.length} open={this.Open} />
+        <Navs value={this.state.users.length} open={this.Open} />
 
         <Users
           users={this.state.users}

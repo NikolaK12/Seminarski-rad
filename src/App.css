@@ -4,12 +4,12 @@
 
 .input {
   background-color: #dcdde1;
-  padding: 1.8vh;
+  padding: 1vh;
 }
 
 .messages {
-  height: 85vh;
-  overflow-y: scroll;
+  height: 88.3vh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column-reverse;
   border-bottom: 1px solid grey;

@@ -9,7 +9,7 @@
 
 .messages {
   height: 85vh;
-  overflow-y: auto;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column-reverse;
   border-bottom: 1px solid grey;

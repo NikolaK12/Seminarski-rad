@@ -1,19 +1,11 @@
 import React from "react";
-import Input from "./Components/Input.jsx";
-import MessageList from "./Components/MessageList.jsx";
-import Nav from "./Components/Nav.jsx";
-import Users from "./Components/Users.jsx";
+import { Nav, Users, MessageList, Input } from "./Components";
 import { Container } from "react-bootstrap";
 import { randomColor } from "randomcolor";
 import "./App.css";
 
-
 function User() {
-
-  var t = prompt("Please enter your username");
-  return t;
-
-
+  return prompt("Please enter username");
 }
 
 export default class App extends React.Component {
@@ -23,7 +15,7 @@ export default class App extends React.Component {
     member: {
       username: User(),
       color: randomColor({
-        luminosity: "light",
+        luminosity: "bright",
       }),
     },
     show: false,
@@ -39,7 +31,6 @@ export default class App extends React.Component {
 
   constructor() {
     super();
-
     this.drone = new window.Scaledrone("hZyfqTbK85kvD0RU", {
       data: this.state.member,
     });
@@ -51,6 +42,7 @@ export default class App extends React.Component {
       member.id = this.drone.clientId;
       this.setState({ member });
     });
+
     const room = this.drone.subscribe("observable-room");
 
     room.on("data", (data, member) => {
@@ -75,7 +67,7 @@ export default class App extends React.Component {
     });
   }
 
-  onSendMessage = (message) => {
+  onSend = (message) => {
     this.drone.publish({
       room: "observable-room",
       message,
@@ -94,14 +86,11 @@ export default class App extends React.Component {
         />
 
         <Container fluid="xxxl" className="messages">
-          <MessageList
-            messages={this.state.messages}
-            currentMember={this.state.member}
-          />
+          <MessageList messages={this.state.messages} />
         </Container>
 
         <Container fluid="xxxl" className="input">
-          <Input send={this.onSendMessage} />
+          <Input send={this.onSend} />
         </Container>
       </Container>
     );

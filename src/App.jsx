@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import { randomColor } from "randomcolor";
 import "./App.css";
 
-function User() {
+function user() {
   return prompt("Please enter username");
 }
 
@@ -14,16 +14,16 @@ export default class App extends React.Component {
     messages: [],
     show: false,
     member: {
-      username: User(),
+      username: user(),
       color: randomColor(),
-    }
+    },
   };
 
-  Open = () => {
+  open = () => {
     this.setState({ show: true });
   };
 
-  Close = () => {
+  close = () => {
     this.setState({ show: false });
   };
 
@@ -74,12 +74,12 @@ export default class App extends React.Component {
   render() {
     return (
       <Container fluid="xxxl" className="ui">
-        <Navs value={this.state.users.length} open={this.Open} />
+        <Navs value={this.state.users.length} open={this.open} />
 
         <Users
           users={this.state.users}
           show={this.state.show}
-          close={this.Close}
+          close={this.close}
         />
 
         <Container fluid="xxxl" className="messages">

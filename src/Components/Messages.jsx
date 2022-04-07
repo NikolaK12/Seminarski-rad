@@ -12,7 +12,7 @@ export default function Messages(props) {
           className="mt-2 ms-2 mx-2 rounded-3 shadow-lg p-4"
           key={nanoid()}
         >
-          <p style={{ color: message.member.clientData.color }}>
+          <p style={{ color: message.member.clientData.color, fontWeight: 'bold' }}>
             {message.member.clientData.username}
           </p>
           <p className="text-break">{message.text}</p>

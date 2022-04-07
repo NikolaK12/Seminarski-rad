@@ -7,7 +7,7 @@ export default function Navs(props) {
 
   return (
     <Nav style={{ backgroundColor: "#dcdde1" }} className="justify-content-between" >
-      <h1 >React App</h1>
+      <h1>React App</h1>
       <h5 onClick={open}>
         {value} users online
         <br />(click to show)

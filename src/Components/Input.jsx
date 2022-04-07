@@ -6,12 +6,12 @@ export default function Input(props) {
 
   const { send } = props;
 
-  const handleChange = (event) => {
-    setText(event.target.value);
+  const handleChange = (e) => {
+    setText(e.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     setText("");
     send(text);
   };

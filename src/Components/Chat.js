@@ -1,34 +1,21 @@
 import React from "react";
-import { Navs, Users, Messages, Input } from "./Components";
+import { Navs, Users, Messages, Input } from "../Components";
 import { Container } from "react-bootstrap";
-import { randomColor } from "randomcolor";
-import "./App.css";
-
-function user() {
-  return prompt("Please enter username");
-}
+import "../Styles/Chat.css";
 
 export default class App extends React.Component {
-  state = {
-    users: [],
-    messages: [],
-    show: false,
-    member: {
-      username: user(),
-      color: randomColor(),
-    },
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: [],
+      messages: [],
+      show: false,
+      member: {
+        username: props.user,
+        color: props.color,
+      },
+    };
 
-  open = () => {
-    this.setState({ show: true });
-  };
-
-  close = () => {
-    this.setState({ show: false });
-  };
-
-  constructor() {
-    super();
     this.drone = new window.Scaledrone("hZyfqTbK85kvD0RU", {
       data: this.state.member,
     });
@@ -44,7 +31,11 @@ export default class App extends React.Component {
 
     room.on("data", (data, member) => {
       const messages = this.state.messages;
-      messages.push({ member, text: data });
+      messages.push({
+        member,
+        text: data,
+        time: new Date().toLocaleTimeString(),
+      });
       this.setState({ messages });
     });
 
@@ -64,6 +55,14 @@ export default class App extends React.Component {
     });
   }
 
+  open = () => {
+    this.setState({ show: true });
+  };
+
+  close = () => {
+    this.setState({ show: false });
+  };
+
   onSend = (message) => {
     this.drone.publish({
       room: "observable-room",
@@ -75,18 +74,17 @@ export default class App extends React.Component {
     return (
       <Container fluid="xxxl" className="ui">
         <Navs value={this.state.users.length} open={this.open} />
-
         <Users
-          users={this.state.users}
           show={this.state.show}
           close={this.close}
+          users={this.state.users}
         />
 
         <Container fluid="xxxl" className="messages">
-          <Messages messages={this.state.messages} />
+          <Messages messages={this.state.messages} user={this.state.member} />
         </Container>
 
-        <Container fluid="xxxl" className="input">
+        <Container fluid="xxxl" className="input mx-auto">
           <Input send={this.onSend} />
         </Container>
       </Container>

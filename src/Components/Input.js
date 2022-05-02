@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Form, FormControl, Button } from "react-bootstrap";
 
-export default function Input(props) {
+export default function Input({ send }) {
   const [text, setText] = useState("");
-
-  const { send } = props;
 
   const handleChange = (e) => {
     setText(e.target.value);
@@ -12,15 +10,19 @@ export default function Input(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setText("");
-    send(text);
+
+    if (text.trim() != "" || text.trim().length != 0) {
+      setText("");
+      send(text);
+    } else {
+      alert("Input cannot be empty");
+    }
   };
 
   return (
-    <Form className="d-flex " onSubmit={handleSubmit}>
+    <Form className="d-flex m-4" onSubmit={handleSubmit}>
       <FormControl
         name="text"
-        className="w-60"
         type="text"
         value={text}
         onChange={handleChange}
@@ -28,7 +30,7 @@ export default function Input(props) {
         placeholder="Enter message"
       />
       <Button className=" mx-2" variant="dark" type="submit">
-        Click
+        Send
       </Button>
     </Form>
   );

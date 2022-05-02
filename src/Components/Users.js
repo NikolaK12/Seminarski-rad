@@ -1,9 +1,7 @@
-import React from "react";
 import { Modal, Button, Table } from "react-bootstrap";
 import { nanoid } from "nanoid";
 
-export default function Users(props) {
-  const { users, show, close } = props;
+export default function Users({ users, show, close }) {
   return (
     <Modal show={show}>
       <Modal.Header>

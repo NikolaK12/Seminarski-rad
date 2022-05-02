@@ -1,0 +1,17 @@
+.card {
+  width: 400px;
+  height: 400px;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 20px;
+}
+
+.text-input {
+  width: 100%;
+}
+
+.color-input {
+  width: 10%;
+}

@@ -81,7 +81,7 @@ export default class App extends React.Component {
         />
 
         <Container fluid="xxxl" className="messages">
-          <Messages messages={this.state.messages} user={this.state.member} />
+          <Messages messages={this.state.messages} />
         </Container>
 
         <Container fluid="xxxl" className="input mx-auto">

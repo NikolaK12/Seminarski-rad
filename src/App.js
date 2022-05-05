@@ -25,7 +25,7 @@ export default class App extends React.Component {
   render() {
     if (this.state.submit === false) {
       return (
-        <Card border="info" className="card d-flex mx-auto mt-4">
+        <Card border="info" className="card d-flex m-auto mt-4">
           <Card.Header className="card-title">React Chat App</Card.Header>
 
           <Card.Body>

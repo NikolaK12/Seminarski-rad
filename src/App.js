@@ -17,6 +17,7 @@ export default class App extends React.Component {
       this.state.username.trim().length != 0
     ) {
       this.setState({ submit: true });
+
     } else {
       alert("Input cannot be empty");
     }

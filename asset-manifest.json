@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.00a00821.css",
-    "main.js": "/react-gh-pages/static/js/main.bc04219b.js",
-    "index.html": "/react-gh-pages/index.html",
-    "main.00a00821.css.map": "/react-gh-pages/static/css/main.00a00821.css.map",
-    "main.bc04219b.js.map": "/react-gh-pages/static/js/main.bc04219b.js.map"
+    "main.css": "/Seminarski-rad/static/css/main.00a00821.css",
+    "main.js": "/Seminarski-rad/static/js/main.bc04219b.js",
+    "index.html": "/Seminarski-rad/index.html",
+    "main.00a00821.css.map": "/Seminarski-rad/static/css/main.00a00821.css.map",
+    "main.bc04219b.js.map": "/Seminarski-rad/static/js/main.bc04219b.js.map"
   },
   "entrypoints": [
     "static/css/main.00a00821.css",

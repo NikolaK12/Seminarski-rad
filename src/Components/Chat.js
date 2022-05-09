@@ -23,7 +23,6 @@ export default class App extends React.Component {
       if (error) {
         return console.error(error);
       }
-      const member = { ...this.state.member };
     });
 
     const room = this.drone.subscribe("observable-room");

@@ -47,7 +47,6 @@ export default class App extends React.Component {
 
     room.on("member_leave", (member) => {
       const newusers = this.state.users.filter((user) => user.id !== member.id);
-
       this.setState({ users: newusers });
     });
   }
